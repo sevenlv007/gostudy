@@ -58,7 +58,6 @@ var (
 	//图片链接中的名字
 	reImgName = `/(\w+\.((jpg)|(jpeg)|(png)|(gif)|(bmp)|(webp)|(swf)|(ico)))`
 
-
 	//存储img的目录
 	imgDir = `D:\go\src\github.com\sevenlv007\gostudy\Spider\img\`
 
@@ -206,13 +205,27 @@ func spiderImg(){
 }
 
 
-func main() {
-		
+func DownloadImgAsyncWithUrl(){
 	imgurls := GetPageImgUrls("https://www.163.com/")
 	for _, imgUrl := range imgurls {
 		//fmt.Println(imgUrl)
 		//DownloadImg(imgUrl)
 		DownloadImgAsync(imgUrl)
 	}
+
+
+}
+
+
+func main() {
+	/*	
+	imgurls := GetPageImgUrls("https://www.163.com/")
+	for _, imgUrl := range imgurls {
+		//fmt.Println(imgUrl)
+		//DownloadImg(imgUrl)
+		DownloadImgAsync(imgUrl)
+	}
+	*/
+	DownloadImgAsyncWithUrl()
 	
 }
